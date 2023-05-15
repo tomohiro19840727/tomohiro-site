@@ -59,7 +59,7 @@ function Home() {
               </div>
               <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
             </div>
-            <Link to='/sleep' className='flex mt-3 text-green-500 items-center font-bold'>詳細</Link>
+            <Link to='/postdetail' className='flex mt-3 text-green-500 items-center font-bold'>詳細</Link>
           </div>
         </div>
       ))}

@@ -1,5 +1,4 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
@@ -8,27 +7,26 @@ import { useState } from 'react'
 import Blog from './components/Blog'
 import Profile from './components/Profile'
 import Setblog from './components/Setblog'
-import Sleep from './components/Sleep'
-import Cosplay from './components/Cosplay'
-import Awake from './components/Awake'
+import PostDetail from './components/PostDetail'
 
 
 function App() {
   const [isAuth, setIsAuth ] = useState(localStorage.getItem("isAuth"));
+  const [selectedPostText, setSelectedPostText] = useState("");
+  const [selectedCode, setSelectedCode ] = useState("");
+  
 
   return (
    <Router>
-     <Navbar  isAuth={isAuth} />
+     <Navbar isAuth={isAuth} />
     <Routes>
-      <Route path='/' element={<Home />}></Route>
-      <Route path='/Profile' element={<Profile />}></Route>
-      <Route path='/login' element={<Login setIsAuth={setIsAuth} />}></Route>
-      <Route path='/logout' element={<Logout setIsAuth={setIsAuth} />}></Route>
-      <Route path='/setblog' element={<Setblog isAuth={isAuth} />}></Route>
-      <Route path='/blog' element={<Blog />}></Route>
-      <Route path='/sleep' element={<Sleep />}></Route>
-      <Route path='/cosplay' element={<Cosplay />}></Route>
-      <Route path='/awake' element={<Awake />}></Route>
+      <Route path='/' element={<Home />} />
+      <Route path='/Profile' element={<Profile />} />
+      <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
+      <Route path='/logout' element={<Logout setIsAuth={setIsAuth} />} />
+      <Route path='/setblog' element={<Setblog isAuth={isAuth}  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode}/>} />
+      <Route path='/blog' element={<Blog />} />
+      <Route path='/postdetail' element={<PostDetail selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} />} />
     </Routes>
    </Router>
   )
