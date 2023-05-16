@@ -13,6 +13,7 @@ const Navbar = ({ isAuth }) => {
     <nav className='md:ml-auto text-base'>
       <Link to="/" className='mr-5 hover:text-blue-400 duration-300'>Home</Link>
       <Link to="/profile" className="mr-5 hover:text-blue-400 duration-300" >Profile</Link>
+      <Link to="/Webapp" className="mr-5 hover:text-blue-400 duration-300" >Web.app</Link>
       
       <Link to="/setblog" className="mr-5 hover:text-blue-400 duration-300" >Blog</Link>
       {!isAuth ?  <Link to="/login" className="mr-5 hover:text-blue-400 duration-300" >Login</Link> : 
