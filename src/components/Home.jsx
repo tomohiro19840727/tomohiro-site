@@ -5,32 +5,27 @@ import { db } from '../firebase';
 import videoBg from "../assets/-6399.mp4";
 
 
-function Home() {
+function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(query(collection(db, "posts"),orderBy("createdAt", "desc"),limit(3)));
-      
-      // console.log(data.docs.map((doc) => ({ ...doc.data({serverTimestamp: "estimate"}).createdAt.toDate(), id: doc.id})))
-      
-      
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
-    //  console.log(postList.createdAt);
-     
     }
     getPosts();
    },[]);
+
+   const handleClick = (post) => {
+    setSelectedPostText(post.postsText);
+    setSelectedCode(post.code);
+    console.log(selectedPostText);
+  };
  
    const sortedLists = postList.sort((a, b) => b.createdAt - a.createdAt);
 
   return (
     <>
-    {/* <video class=" w-full h-ful" src={videoBg} autoPlay muted loop />
-     <div className='content'>
-      <h1>Welcome</h1>
-      <p>to my site</p>
-     </div> */}
      <div class="relative w-screen h-screen">
   <video class="absolute top-0 left-0 w-full h-full object-cover z-0" src={videoBg} autoPlay muted loop playsInline/>
   <div class="absolute bottom-60 right-12 transform translate-x-1/14 translate-y-1/2 z-10">
@@ -59,7 +54,7 @@ function Home() {
               </div>
               <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
             </div>
-            <Link to='/postdetail' className='flex mt-3 text-green-500 items-center font-bold'>詳細</Link>
+            <Link to='/postdetail' onClick={() => handleClick(post)} className='flex mt-3 text-green-500 items-center font-bold'>詳細</Link>
           </div>
         </div>
       ))}

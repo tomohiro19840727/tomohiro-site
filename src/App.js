@@ -20,7 +20,7 @@ function App() {
    <Router>
      <Navbar isAuth={isAuth} />
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Home  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} />} />
       <Route path='/Profile' element={<Profile />} />
       <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
       <Route path='/logout' element={<Logout setIsAuth={setIsAuth} />} />
