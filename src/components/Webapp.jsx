@@ -143,7 +143,7 @@ const Webapp = () => {
         </div>
         
         <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
-          <a href="https://tomohiro19840727.github.io/tomohiro-monndai" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
+          <a href="https://tomohiro19840727.github.io/tomohiro-wa/" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
             <img src="./img/PCRset12009_TP_V4.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
           </a>
   
@@ -157,7 +157,7 @@ const Webapp = () => {
             <p class="text-gray-500">コロナワクチンに関する簡単な問題です。</p>
   
             <div>
-              <a href="https://tomohiro19840727.github.io/tomo-monndai" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
+              <a href="https://tomohiro19840727.github.io/tomohiro-wa/" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
             </div>
           </div>
         </div>
