@@ -3,6 +3,15 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase';
 import videoBg from "../assets/-6399.mp4";
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import 'dayjs/locale/ja';
+
+
+dayjs.locale('ja');
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 
 function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
@@ -40,27 +49,36 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
 
 
-    <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12  pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
-  <div className='container px-5 py-24 mx-auto'>
-    <div className='text-center md-20  mb-20'>
-      <h1 className='text-2xl sm:text-3xl mb-2 text-gray-900 font-bold'>最新の投稿情報</h1>
-    </div>
-    <div className='flex flex-wrap -mx-4'>
-      {sortedLists.map((post) => (
-        <div key={post.id} className='md:w-1/3 px-4 mb-8'>
-          <div className='bg-gray-200 rounded-lg p-8'>
-            <div className='flex items-center mb-3'>
-              <div className='bg-green-500 text-white rounded-full h-8 w-8 flex items-center justify-center'>
-              </div>
-              <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
-            </div>
-            <Link to='/postdetail' onClick={() => handleClick(post)} className='flex mt-3 text-green-500 items-center font-bold'>詳細</Link>
-          </div>
+<section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
+      <div className='container px-5 py-24 mx-auto'>
+        <div className='text-center md-20 mb-20'>
+          <h1 className='text-2xl sm:text-3xl mb-2 text-gray-900 font-bold'>最新の投稿情報</h1>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+        <div className='flex flex-wrap -mx-4'>
+          {sortedLists.map((post) => (
+            <div key={post.id} className='md:w-1/3 px-4 mb-8'>
+              <div className='bg-gray-200 rounded-lg p-8'>
+                <div className='flex items-center mb-3'>
+                  <div className='bg-green-500 text-white rounded-full h-8 w-8 flex items-center justify-center'></div>
+                  <span className='text-gray-800 text-xl font-bold block'>
+                    {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
+                  </span>
+                  <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
+                </div>
+                <Link
+                  to='/postdetail'
+                  onClick={() => handleClick(post)}
+                  className='flex mt-3 text-green-500 items-center font-bold hover:text-green-600 transition-colors duration-300'
+                >
+                  詳細
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
 
 
    <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 bg-h-screen w-full bg-gradient-to-br
