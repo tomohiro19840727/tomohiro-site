@@ -34,6 +34,7 @@ const Webapp = () => {
             </div>
           </div>
         </div>
+        
   
   
   
@@ -56,6 +57,29 @@ const Webapp = () => {
             </div>
           </div>
         </div>
+
+        <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
+          <a href="" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
+            <img src="./img/PAK12_10naname_TP_V4.jpg" loading="lazy" alt="Photo by Lorenzo Herrera" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+          </a>
+  
+          <div class="flex flex-col gap-2 p-4 lg:p-6">
+            <span class="text-gray-400 text-sm">April 07, 2021</span>
+  
+            <h2 class="text-gray-800 text-xl font-bold">
+              <h3 class="hover:text-indigo-500 active:text-indigo-600 transition duration-100">数字当てゲーム</h3>
+            </h2>
+  
+            <p class="text-gray-500">これは、簡単な数字を小さい方から順番に クリックしていくゲームです。</p>
+  
+            <div>
+              <a href="https://tomohiro19840727.github.io/tomo-suuzi" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
+            </div>
+          </div>
+        </div>
+
+
+        
 
         <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
           <a href="#" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
@@ -114,6 +138,26 @@ const Webapp = () => {
   
             <div>
               <a href="https://tomo-nextblog.vercel.app" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
+          <a href="#" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
+            <img src="./img/PCRset12009_TP_V4.jpg" loading="lazy" alt="Photo by Martin Sanchez" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
+          </a>
+  
+          <div class="flex flex-col gap-2 p-4 lg:p-6">
+            <span class="text-gray-400 text-sm">January 27, 2022</span>
+  
+            <h2 class="text-gray-800 text-xl font-bold">
+              <h3 class="hover:text-indigo-500 active:text-indigo-600 transition duration-100">3択クイズ</h3>
+            </h2>
+  
+            <p class="text-gray-500">コロナワクチンに関する簡単な問題です。</p>
+  
+            <div>
+              <a href="https://tomohiro19840727.github.io/tomo-monndai" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
             </div>
           </div>
         </div>
