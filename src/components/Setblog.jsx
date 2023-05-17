@@ -9,8 +9,14 @@ import {
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import dayjs from 'dayjs';
+import 'dayjs/locale/ja'; // 必要に応じてロケールを指定してください
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 
 import { Link } from 'react-router-dom';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 function Setblog({ isAuth, setSelectedPostText, selectedPostText, setSelectedCode }) {
   const [postList, setPostList] = useState([]);
@@ -47,7 +53,10 @@ function Setblog({ isAuth, setSelectedPostText, selectedPostText, setSelectedCod
             {sortedLists.map((post) => (
               <div key={post.id} className="bg-gray-100 rounded-lg overflow-hidden">
                 <div className="p-4">
-                  <span className="text-gray-800 text-xl font-bold block">{dayjs.unix(post.createdAt).format('MM/DD HH:mm')}</span>
+                  <span className="text-gray-800 text-xl font-bold block">
+                    {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
+                  </span>
+
                   <h2 className="text-gray-800 text-xl font-bold mb-2">
                     <Link to="/postdetail" onClick={() => handleClick(post)} className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.title}</Link>
                   </h2>
