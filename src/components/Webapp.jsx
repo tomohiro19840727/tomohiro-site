@@ -30,7 +30,7 @@ const Webapp = () => {
             <p class="text-gray-500">OpenAIを活用して、可愛らしい猫との楽しい会話を楽しむことができます。猫とのコミュニケーションをさらに進化させ、新たな世界を開拓しましょう。</p>
   
             <div>
-              <a href="https://sirasu-chat-tomohiro19840727.vercel.app" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
+              <a href="https://sirasu-gpt.vercel.app" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
             </div>
           </div>
         </div>
