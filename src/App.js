@@ -9,6 +9,7 @@ import Profile from './components/Profile'
 import Setblog from './components/Setblog'
 import PostDetail from './components/PostDetail'
 import Webapp from "./components/Webapp"
+import SendMail from "./components/SendMail"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Route path='/' element={<Home  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} />} />
       <Route path='/Profile' element={<Profile />} />
       <Route path='/Webapp' element={<Webapp />} />
+      <Route path='/SendMail' element={<SendMail />} />
       <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
       <Route path='/logout' element={<Logout setIsAuth={setIsAuth} />} />
       <Route path='/setblog' element={<Setblog isAuth={isAuth}  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode}/>} />
