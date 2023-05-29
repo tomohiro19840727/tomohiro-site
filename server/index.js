@@ -5,7 +5,7 @@ const sgMail = require('@sendgrid/mail');
 app.use(express.json());
 
 // SendGridのAPIキーをセットアップ
-sgMail.setApiKey('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');
+sgMail.setApiKey('');
 
 app.post('/api/sendmail', (req, res) => {
   const { name, email, message } = req.body;
