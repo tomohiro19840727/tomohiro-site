@@ -3,8 +3,10 @@ const admin = require("firebase-admin");
 const sgMail = require("@sendgrid/mail");
 const cors = require("cors")({origin: true});
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 admin.initializeApp();
-sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+sgMail.setApiKey(apiKey);
 
 exports.sendMail = functions.https.onRequest((req, res) => {
   // CORS設定を適用する
@@ -13,7 +15,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
     const msg = {
       to: "tomohirofarm@gmail.com", // 送信先のメールアドレス
-      from: "tomohiro-site.com", // 送信元のメールアドレス
+      from: "tomohiro-site@gmail.com", // 送信元のメールアドレス
       subject: "お問い合わせ",
       text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
     };
