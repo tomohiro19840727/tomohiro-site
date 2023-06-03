@@ -1,3 +1,4 @@
+
 const {onRequest} = require("firebase-functions");
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
@@ -15,7 +16,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
     const msg = {
       to: "tomohirofarm@gmail.com",
-      from: "tomohiro-site.com",
+      from: "sender-email",
       subject: "お問い合わせ",
       text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
     };
