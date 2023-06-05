@@ -7,16 +7,17 @@ const Navbar = ({ isAuth }) => {
       <header className='text-gray-700 border-b border-gray-400'>
         <div className='container flex mx-auto p-5 flex-col md:flex-row items-center'>
           <a href='#' className="font-medium text-gray-900 mb-4 md:mb-0">
-            <span className='text-3xl ml-3 font-cursive'>Tomohiro Kuriki</span>
+            <span className='text-5xl ml-3 font-cursive'>Tomohiro Kuriki</span>
           </a>
-          <nav className='md:ml-auto text-base'>
+          <nav className='md:ml-auto md:text-4xl text-2xl'>
             <Link to="/" className='mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform' >Home</Link>
             <Link to="/profile" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Profile</Link>
             <Link to="/Webapp" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Web.app</Link>
+            <br/>
             <Link to="/sendMail" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >SendMail</Link>
             <Link to="/setblog" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Blog</Link>
             {!isAuth ?  
-              <Link to="/login" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Login</Link> 
+              <Link to="/login" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform " >Login</Link> 
               : 
               <>
                 <Link to="/logout" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Logout</Link>

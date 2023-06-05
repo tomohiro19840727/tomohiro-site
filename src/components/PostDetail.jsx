@@ -11,9 +11,10 @@ function PostDetail({ selectedPostText, selectedCode, selectedImage }) {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-gray-200'>
       <img src={selectedImage} className="w-1/3 my-8" alt="Selected Image" />
-      <div className="bg-white rounded-lg shadow-lg p-8">
+      <div className="rounded-lg shadow-lg p-8 border-gray-200 bg-white  bg-h-screen w-full bg-gradient-to-br
+    from-violet-300 via-blue-100 to-orange-100 py-6 sm:py-8 lg:py-12">
         <div className="mb-4">
-          <p className="text-3xl text-gray-800 whitespace-pre-wrap">
+          <p className="text-2xl text-gray-800 whitespace-pre-wrap">
           <div dangerouslySetInnerHTML={{ __html: selectedPostText }} />
            </p>
         </div>
