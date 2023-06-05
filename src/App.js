@@ -16,6 +16,7 @@ function App() {
   const [isAuth, setIsAuth ] = useState(localStorage.getItem("isAuth"));
   const [selectedPostText, setSelectedPostText] = useState("");
   const [selectedCode, setSelectedCode ] = useState("");
+  const [selectedImage, setSelectedImage] = useState("");
   
 
   return (
@@ -28,9 +29,9 @@ function App() {
       <Route path='/SendMail' element={<SendMail />} />
       <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
       <Route path='/logout' element={<Logout setIsAuth={setIsAuth} />} />
-      <Route path='/setblog' element={<Setblog isAuth={isAuth}  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode}/>} />
+      <Route path='/setblog' element={<Setblog isAuth={isAuth}  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>} />
       <Route path='/blog' element={<Blog />} />
-      <Route path='/postdetail' element={<PostDetail selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} />} />
+      <Route path='/postdetail' element={<PostDetail selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>} />
     </Routes>
    </Router>
   )

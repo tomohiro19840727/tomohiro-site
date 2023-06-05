@@ -15,29 +15,7 @@ const Webapp = () => {
   
       <div class="grid sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-6 xl:gap-8">
   
-        <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
-          <a href="#" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
-            <img src="./img/スクリーンショット 2023-05-16 15.47.51.png" loading="lazy"  class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />
-          </a>
-  
-          <div class="flex flex-col gap-2 p-4 lg:p-6">
-            <span class="text-gray-400 text-sm">July 19, 2021</span>
-  
-            <h2 class="text-gray-800 text-xl font-bold">
-              <h1 class="hover:text-indigo-500 active:text-indigo-600 transition duration-100">しらすのAI</h1>
-            </h2>
-  
-            <p class="text-gray-500">OpenAIを活用して、可愛らしい猫との楽しい会話を楽しむことができます。猫とのコミュニケーションをさらに進化させ、新たな世界を開拓しましょう。</p>
-  
-            <div>
-              <a href="https://sirasu-gpt.vercel.app" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
-            </div>
-          </div>
-        </div>
         
-  
-  
-  
         <div class="bg-gray-100 flex flex-col md:flex-row items-center border rounded-lg overflow-hidden">
           <a href="#" class="group w-full md:w-32 lg:w-48 h-48 md:h-full block self-start shrink-0 bg-gray-100 overflow-hidden relative">
             <img src="./img/17300839069083.jpg" loading="lazy" alt="Photo by Lorenzo Herrera" class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition duration-200" />

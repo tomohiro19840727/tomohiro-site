@@ -13,7 +13,7 @@ const Navbar = ({ isAuth }) => {
             <Link to="/" className='mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform' >Home</Link>
             <Link to="/profile" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Profile</Link>
             <Link to="/Webapp" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Web.app</Link>
-            <Link to="/SendMail" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >SendMail</Link>
+            <Link to="/sendMail" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >SendMail</Link>
             <Link to="/setblog" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Blog</Link>
             {!isAuth ?  
               <Link to="/login" className="mr-5 hover:text-blue-400 duration-300 text-black hover:text-blue-500 hover:underline transform hover:scale-110 transition-transform" >Login</Link> 

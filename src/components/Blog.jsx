@@ -31,7 +31,7 @@ function Blog() {
       getDownloadURL(imageRef).then((imageUrl) => {
         addDoc(collection(db, 'posts'), {
           title: title,
-          postsText: postText,
+          postsText: postText.replace(/\n/g, '<br />'),
           code: code,
           imgUrl: imageUrl,
           createdAt: serverTimestamp(),
