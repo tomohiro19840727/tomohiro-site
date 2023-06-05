@@ -25,7 +25,7 @@ const SendMail = () => {
       .then((response) => {
         if (response.ok) {
           console.log('メールが送信されました');
-          // フォームの送信後に入力内容をリセットする
+          // フォームの送信後に入力内容をリセット
           setIsSubmitted(true);
           setName('');
           setEmail('');
