@@ -49,7 +49,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
 <h2 className='text-4xl font-bold m-40 flex justify-center animate-delayed-tracking-in-expand font-serif'>
 自然とテクノロジーの融合を追求するフロントエンジニアとして、<br/><br/>
-私にしか作れない魅力的なWEBアプリを提供します。</h2>
+私にしか作れない魅力的なWEBアプリを提供します！！</h2>
 
   <h3 className="text-4xl font-bold m-20 flex justify-center">About me</h3>
 
@@ -104,7 +104,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
       『 React.js、Typescript、TailwindCSS等 』で<br/>魅力的なアプリを開発中！<br /><br />
       PHP、AWS、Next.jsにもチャレンジ予定！<br /><br />
         </div>
-    <div className="w-1/2 h-full bg-cover bg-center opacity-80 ml-10" style={{ backgroundImage: "url('./img/21830a0I9A97521937_TP_V4.jpg')" }}></div>
+    <div className="w-1/2 h-full bg-cover bg-center opacity-80 mb-20 ml-10" style={{ backgroundImage: "url('./img/21830a0I9A97521937_TP_V4.jpg')" }}></div>
   </div>
 </div>
 
