@@ -47,7 +47,9 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
   </div>
 </div>
 
-
+<h2 className='text-4xl font-bold m-40 flex justify-center animate-delayed-tracking-in-expand font-serif'>
+自然とテクノロジーの融合を追求するフロントエンジニアとして、<br/><br/>
+私にしか作れない魅力的なWEBアプリを提供します。</h2>
 
   <h3 className="text-4xl font-bold m-20 flex justify-center">About me</h3>
 
