@@ -8,6 +8,7 @@ import timezone from 'dayjs/plugin/timezone';
 import 'dayjs/locale/ja';
 import About from './About';
 import Welcome from './Welcome';
+import Require from './Require';
 
 
 dayjs.locale('ja');
@@ -145,7 +146,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
             <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">HTML&CSS, Javascript</div>
           </h2>
 
-          <p class="text-gray-500 font-bold">HTMLを使用してWebページの構造を定義し、要素を配置します。CSSを使ってそれらの要素のスタイルやレイアウトを設定し、見栄えを整えます。そして、JavaScriptを活用することで、ページ上で動的な動作やユーザーとの対話を実現します</p>
+          <p class="text-gray-500 font-bold">HTMLを使用してWebページの構造を定義し、要素を配置します。<br/>CSSを使ってそれらの要素のスタイルやレイアウトを設定し、見栄えを整えます。<br/>そして、JavaScriptを活用することで、ページ上で動的な動作やユーザーとの対話を実現します</p>
         </div>
       </div>
 
@@ -162,7 +163,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
             <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">React.js</div>
           </h2>
 
-          <p class="text-gray-500 font-bold">コンポーネントと呼ばれる再利用可能なUI要素を作成し、それらを組み合わせてWebアプリケーションを作ることができます。React.jsを使うことで、スムーズなUIの更新やパフォーマンスの向上が可能となります。</p>
+          <p class="text-gray-500 font-bold">コンポーネントと呼ばれる再利用可能なUI要素を作成し、それらを組み合わせてWebアプリケーションを作ることができます。<br/>React.jsを使うことで、スムーズなUIの更新やパフォーマンスの向上が可能となります。</p>
 
         </div>
       </div>
@@ -180,7 +181,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
             <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">Firebase</div>
           </h2>
 
-          <p class="text-gray-500 font-bold">バックエンドの機能を簡単に利用できるようにします。データベース、認証、ストレージ、ホスティングなどの機能を提供し、Webアプリケーションやモバイルアプリケーションの開発を支援します。また、リアルタイムデータベースや通知などのリアルタイム機能も備えています。</p>
+          <p class="text-gray-500 font-bold">バックエンドの機能を簡単に利用できるようにします。データベース、認証、ストレージ、ホスティングなどの機能を提供し、Webアプリケーションやモバイルアプリケーションの開発を支援します。<br/>また、リアルタイムデータベースや通知などのリアルタイム機能も備えています。</p>
 
           
         </div>
@@ -199,52 +200,17 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
             <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">TailWindCSS</div>
           </h2>
 
-          <p class="text-gray-500 font-bold">CSSを書く手間や複雑さを減らしながら、柔軟なデザインを実現できます。また、クラス名に基づいた明確な命名規則があり、再利用性の高いコードを書くことができます</p>
-
-          
+          <p class="text-gray-500 font-bold">CSSを書く手間や複雑さを減らしながら、柔軟なデザインを実現できます。<br/>また、クラス名に基づいた明確な命名規則があり、再利用性の高いコードを書くことができます</p>
         </div>
       </div>
-      
     </div>
   </div>
 </div>
 
 
+<Require />
 
 
-{/* <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 bg-h-screen w-full bg-gradient-to-br
-  from-violet-300 via-blue-100 to-orange-100'>
-    <div className='container px-5 py-24 mx-auto flex flex-wrap'>
-      <div className='mb-10 lg:mb-0 w-full lg:w-1/2 flex justify-center'>
-        <img src='./img/4794985515903460063.d142979e8592baa951b451dcf957498f.22091503.JPG' alt='' className='rounded md:w-1/2 lg:max-w-lg w-5/6'/>
-      </div>
-       <div className='lg:pl-12 lg:py-6 w-full lg:w-1/2 '>
-        <h1 className='text-2xl sm:text-3xl font-medium text-gray-900 mb-10 text-center lg:text-left'>My Skills</h1>
-        <div className='w-full'>
-          <h2 className='font-bold text-blue-400'>プログラミングスキル</h2>
-          <div className='shadow bg-green-100 mt-2 w-full'>
-             <div className='bg-green-600 text-xs leading-none py-1 text-center  font-bold text-blue-200' style={{width: "25%" }}>25%</div>
-          </div>
-          <br />
-          <h2 className='font-bold text-yellow-600'>柔軟性</h2>
-          <div className='shadow bg-green-100 mt-2 w-full'>
-             <div className='bg-green-600 text-xs leading-none py-1 text-center  font-bold text-yellow-200' style={{width: "75%" }}>75%</div>
-          </div>
-          <br />
-          <h2 className='font-bold text-pink-400'>親切さ</h2>
-          <div className='shadow bg-green-100 mt-2 w-full'>
-             <div className='bg-green-600 text-xs leading-none py-1 text-center  font-bold text-pink-200' style={{width: "85%" }}>85%</div>
-          </div>
-          <br />
-          <h2 className='font-bold text-red-500'>コミュニケーション</h2>
-          <div className='shadow bg-green-100 mt-2 w-full'>
-             <div className='bg-green-600 text-xs leading-none py-1 text-center text-white font-bold'   style={{width: "95%" }}>95%</div>
-          </div>
-        </div>
-       </div>
-    </div>
-
-   </section> */}
 
    <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
       <div className='container px-5 py-24 mx-auto'>
