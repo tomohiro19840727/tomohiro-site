@@ -111,7 +111,10 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
 <div class="bg-white py-6 sm:py-8 lg:py-12 mt-20">
   <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <h2 class="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-20 lg:text-5xl">Works <h3 className=''>-制作物-</h3></h2>
+  <h2 class="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-20 lg:text-5xl">
+  Works <span class="ml-2 text-xl font-medium">-制作物-</span>
+</h2>
+
 
     <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
      
@@ -186,7 +189,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
   <div class="mx-auto max-w-screen-xl px-4 md:px-8">
 
     <div class="mb-10 md:mb-16">
-      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">Skill</h2>
+      <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-6xl">Skill <span class="ml-2 text-xl font-medium">-できること-</span></h2>
     </div>
 
 
@@ -238,7 +241,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
             <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">Firebase</div>
           </h2>
 
-          <p class="text-gray-500 font-bold">FirebaseはGoogleが提供するクラウドプラットフォームで、バックエンドの機能を簡単に利用できるようにします。データベース、認証、ストレージ、ホスティングなどの機能を提供し、Webアプリケーションやモバイルアプリケーションの開発を支援します。また、リアルタイムデータベースや通知などのリアルタイム機能も備えています。</p>
+          <p class="text-gray-500 font-bold">バックエンドの機能を簡単に利用できるようにします。データベース、認証、ストレージ、ホスティングなどの機能を提供し、Webアプリケーションやモバイルアプリケーションの開発を支援します。また、リアルタイムデータベースや通知などのリアルタイム機能も備えています。</p>
 
           
         </div>
