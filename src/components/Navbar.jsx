@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ isAuth }) => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
   <>
-    <div className='text-gray-700 border-gray-200 bg-white bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-100 to-orange-100'>
+    <div className={`${
+          isSticky ? 'fixed top-0 left-0 w-full bg-white shadow' : ''
+        }`}>
       <header className='text-gray-700 border-b border-gray-400'>
         <div className='container flex mx-auto p-5 flex-col md:flex-row items-center'>
           <div  className="font-medium text-gray-900 mb-4 md:mb-0">
-            <span className='text-5xl ml-3 font-cursive'>Tomohiro Kuriki</span>
+            <span className='text-3xl ml-3 font-cursive'>Tomohiro Kuriki</span>
           </div>
           <nav className='md:ml-auto md:text-4xl text-2xl'>
 
