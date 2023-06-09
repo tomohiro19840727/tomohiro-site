@@ -15,7 +15,9 @@ function Profile() {
       <div className="md:pt-8">
         <p className="text-indigo-500 font-bold text-center md:text-left">Who we are</p>
 
-        <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">自然とテクノロジーのギャップを埋める：農業、テクノロジー、創造性を仕事に融合する！</h1>
+        <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">自然とテクノロジーのギャップを埋める：<br/>
+        農業、テクノロジー、創造性を<br/>
+        仕事に融合する！</h1>
 
         <p className="text-gray-500 sm:text-lg mb-6 md:mb-8">
         私は競馬の馬を調教したり、農家の仕事をしてトラクター、コンバイン、大型トラックなどを乗りこなし、現在はフロントエンドエンジニアとしてプログラミングの世界で新たな挑戦をしています。
