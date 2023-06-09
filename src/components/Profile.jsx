@@ -13,9 +13,8 @@ function Profile() {
       </div>
 
       <div className="md:pt-8">
-        <p className="text-indigo-500 font-bold text-center md:text-left">Who we are</p>
 
-        <h1 className="text-gray-800 text-2xl sm:text-3xl font-bold text-center md:text-left mb-4 md:mb-6">自然とテクノロジーのギャップを埋める：<br/>
+        <h1 className="flex justify-center text-gray-800 text-2xl sm:text-3xl font-serif text-center font-bold md:text-left mb-4 md:mb-6">自然とテクノロジーのギャップを埋める：<br/>
         農業、テクノロジー、創造性を<br/>
         仕事に融合する！</h1>
 

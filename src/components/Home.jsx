@@ -2,11 +2,12 @@ import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../firebase';
-import videoBg from "../assets/-6399.mp4";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import 'dayjs/locale/ja';
+import About from './About';
+import Welcome from './Welcome';
 
 
 dayjs.locale('ja');
@@ -35,78 +36,16 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
   return (
     <>
-     <div class="relative w-screen h-screen">
-  <video class="absolute top-0 left-0 w-full h-full object-cover z-0" src={videoBg} autoPlay muted loop playsInline/>
-  <div class="absolute bottom-60 right-12 transform translate-x-1/14 translate-y-1/2 z-10">
-    <h1 class="text-white text-6xl font-bold mb-4 sm:text-7xl animate-delayed-tracking-in-expand">Tomohiro</h1>
-    <p class="text-white text-6xl font-bold mb-4 sm:text-7xl animate-delayed-tracking-in-expand">Kuriki</p>
-  </div>
-  <div class="absolute mt-40 left-12 transform -translate-y-1/2 z-10 w-1/2">
-    <h1 class=" text-7xl sm:text-9xl font-bold mb-4 text-indigo-100 animate-delayed-tracking-in-expand">Welcome</h1>
-    <p class=" text-5xl sm:text-7xl font-bold mb-4 text-indigo-100 animate-delayed-tracking-in-expand">to My Site</p>
-  </div>
-</div>
+    <Welcome />
+     
 
-<h2 className='text-4xl font-bold m-40 flex justify-center animate-delayed-tracking-in-expand font-serif'>
+<h2 className='text-4xl font-bold m-40 flex justify-center font-serif'>
 自然とテクノロジーの融合を追求するフロントエンジニアとして、<br/><br/>
 私にしか作れない魅力的なWEBアプリを提供します！！</h2>
 
-  <h3 className="text-4xl font-bold m-20 flex justify-center">About me</h3>
+<About />
 
-    <div className="about flex flex-wrap justify-center items-center">
-    <div className="w-full md:w-48 h-48 rounded-full overflow-hidden flex-shrink-0 md:mr-8">
-      <img src="./img/20220227-A7401987_TP_V4.jpg" alt="" className="w-full h-full object-cover" />
-    </div>
-  </div>
-
-
-  <div className="flex justify-center m-20">
-  <div className="flex items-center w-full h-auto">
-    <div className="w-1/2 h-full bg-cover bg-center opacity-50" style={{ backgroundImage: "url('./img/スクリーンショット 2023-06-09 10.22.26.png')" }}></div>
-    <div className="w-1/2 text-black text-center p-8 text-2xl mt-8 font-bold animate-tracking-in-expand">
-      <p className="leading-tight"><br />未経験から競走馬の牧場で10年・・<br /><br />
-      競走馬を生産、育成、馴致等で<br/><br/>
-      日本一の牧場である「ノーザンファーム」で躍進！<br /><br /></p>
-    </div>
-  </div>
-</div>
-
-  <div className="flex justify-center m-20">
-  <div className="flex items-center w-full h-auto">
-    <div className="w-1/2 text-black text-center p-8 text-2xl mt-8 font-bold">
-    <p><br /><br />「農業」でも未経験ながら6年・・<br/><br/>
-    実践的な経験を積み重ねました<br /><br /></p>
-      <p>トラクター、コンバインなど、様々な大型機械にも習熟！<br /><br /></p>
-    </div>
-    <div className="w-1/2 h-full bg-cover bg-center opacity-80" style={{ backgroundImage: "url('./img/スクリーンショット 2023-06-09 10.41.42.png')" }}></div>
-  </div>
-</div>
-
-<div className="flex justify-center m-20">
-  <div className="flex items-center w-full h-auto">
-    <div className="w-1/2 h-full bg-cover bg-center opacity-50" style={{ backgroundImage: "url('./img/スクリーンショット 2023-06-09 11.54.52.png')" }}></div>
-    <div className="w-1/2 text-black text-center p-8 text-2xl mt-8 font-bold">
-    <div className="text-black text-center p-8 text-2xl mt-8 font-bold">
-        コールセンターのオペレーターとして<br/>
-        コミュニケーション能力を培う<br /><br />
-        
-        その後、オペレーターの指揮を執る<br/>SV（スーパーバイザー）へと転身<br /><br />
-        顧客の期待を超えるサービスを提供し、<br/>的確な解決策をお届けします!<br /><br />
-        </div>
-    </div>
-  </div>
-</div>
-
-<div className="flex justify-center">
-  <div className="flex items-center w-full h-auto">
-  <div className="text-black text-center p-8 text-2xl mt-8 font-bold m-20">
-        「 独学 」でエンジニアに転身し,<br/>着実にスキルを磨いています。<br /><br />
-      『 React.js、Typescript、TailwindCSS等 』で<br/>魅力的なアプリを開発中！<br /><br />
-      PHP、AWS、Next.jsにもチャレンジ予定！<br /><br />
-        </div>
-    <div className="w-1/2 h-full bg-cover bg-center opacity-80 mb-20 ml-10" style={{ backgroundImage: "url('./img/21830a0I9A97521937_TP_V4.jpg')" }}></div>
-  </div>
-</div>
+  
 
 
 <div class="bg-white py-6 sm:py-8 lg:py-12 mt-20">
@@ -124,7 +63,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
           <div class="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
             <span class="text-gray-500">しらすの日常</span>
-            <span class="text-lg font-bold text-gray-800 lg:text-xl">しらす」という、まるで夢の世界に迷い込んだかのような猫のサイトをご紹介します</span>
+            <span class="text-lg font-bold text-gray-800 lg:text-xl">『しらす」という、まるで夢の世界に迷い込んだかのような猫のサイトをご紹介します</span>
           <div>
               <a href="https://tomo-router.vercel.app" class="text-indigo-500 hover:text-indigo-600 active:text-indigo-700 font-semibold transition duration-100">Read more</a>
             </div>
