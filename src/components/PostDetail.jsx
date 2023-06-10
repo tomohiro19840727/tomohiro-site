@@ -7,7 +7,15 @@ import 'tailwindcss/tailwind.css';
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 SyntaxHighlighter.registerLanguage('javascript', javascript);
 
-function PostDetail({ selectedPostText, selectedCode, selectedImage }) {
+function PostDetail({ 
+  selectedPostText, 
+  selectedCode, 
+  selectedPostText2, 
+  selectedCode2, 
+  selectedPostText3, 
+  selectedCode3, 
+  selectedImage 
+}) {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen bg-gray-200'>
       <img src={selectedImage} className="w-1/3 my-8" alt="Selected Image" />
@@ -30,6 +38,51 @@ function PostDetail({ selectedPostText, selectedCode, selectedImage }) {
           </div>
         </div>
       </div>
+
+      {selectedPostText2 && selectedCode2 && (
+      <div className="rounded-lg shadow-lg p-8 border-gray-200 bg-white  bg-h-screen w-full bg-gradient-to-br
+    from-violet-300 via-blue-100 to-orange-100 py-6 sm:py-8 lg:py-12">
+        <div className="mb-4">
+          <p className="text-2xl text-gray-800 whitespace-pre-wrap">
+          <div dangerouslySetInnerHTML={{ __html: selectedPostText2 }} />
+           </p>
+        </div>
+        <div className="w-full">
+          <div className="bg-gray-900 rounded-lg overflow-hidden p-8">
+            <SyntaxHighlighter
+              language="javascript"
+              style={materialDark}
+              className="text-lg font-mono text-white whitespace-pre-wrap"
+            >
+              {selectedCode2}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+      )}
+
+
+ {selectedPostText3 && selectedCode3 && (
+      <div className="rounded-lg shadow-lg p-8 border-gray-200 bg-white  bg-h-screen w-full bg-gradient-to-br
+    from-violet-300 via-blue-100 to-orange-100 py-6 sm:py-8 lg:py-12">
+        <div className="mb-4">
+          <p className="text-2xl text-gray-800 whitespace-pre-wrap">
+          <div dangerouslySetInnerHTML={{ __html: selectedPostText3 }} />
+           </p>
+        </div>
+        <div className="w-full">
+          <div className="bg-gray-900 rounded-lg overflow-hidden p-8">
+            <SyntaxHighlighter
+              language="javascript"
+              style={materialDark}
+              className="text-lg font-mono text-white whitespace-pre-wrap"
+            >
+              {selectedCode3}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+   )};
     </div>
   );
 }
