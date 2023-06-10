@@ -41,8 +41,9 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
      
 
 <h2 className='text-4xl font-bold m-40 flex justify-center font-serif'>
-自然とテクノロジーの融合を追求するフロントエンジニアとして、<br/><br/>
-私にしか作れない魅力的なWEBアプリを提供します！！</h2>
+『 自然とテクノロジーの融合 』を追求する<br/><br/>
+"フロントエンジニア"として、<br/><br/>
+私にしか作れない魅力的な『 WEBアプリ 』を提供します！！</h2>
 
 <About />
 

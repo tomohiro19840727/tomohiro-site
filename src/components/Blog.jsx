@@ -43,54 +43,104 @@ function Blog() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 ">
-      <div className="container flex flex-col min-h-screen px-6 py-12 mx-auto">
-        <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
-          <div className="mt-8 lg:w-1/2 lg:mx-6">
-            <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-gray-900 lg:max-w-xl">
-              <h1 className="text-xl font-medium text-gray-700 dark:text-gray-200">Blog 投稿</h1>
-              <form className="mt-4" onSubmit={createPost}>
-                <div className="flex-1">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">タイトル</label>
-                  <input
-                    type="text"
-                    placeholder="タイトルを記入"
-                    onChange={(e) => setTitle(e.target.value)}
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
-                  />
-                </div>
-                <div className="flex-1 mt-6">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">画像</label>
-                  <input
-                    type="file"
-                    accept="png, .jpeg, .jpg, .HEIC"
-                    onChange={handleImage}
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
-                    />
-                    </div>
-                    <div className="w-full mt-6">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">内容</label>
-                    <textarea
-                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
-                    placeholder="内容を記入"
-                    onChange={(e) => setPostText(e.target.value)}
-                    ></textarea>
-                    </div>
-                    <div className="w-full mt-6">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">コード</label>
-                    <textarea
-                    className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
-                    placeholder="コードを記入"
-                    onChange={(e) => setCode(e.target.value)}
-                    ></textarea>
-                    </div>
-                    <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"  type="submit">投稿する</button>
-                     </form>
-                      </div>
-                </div>
-            </div>
-         </div>
-     </section>
-                    );}
+    <>
+
+      <div class="bg-white  sm:py-8 lg:py-12 min-h-screen bg-gradient-to-br from-violet-300 via-pink-100 to-orange-100 py-6 ">
+      <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        
+        <div class="mb-10 md:mb-16">
+          <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-5xl">ブログ投稿</h2>
+        </div>
+        
+        <form onSubmit={createPost} class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label class="mb-2 inline-block text-sm text-g  ray-800 sm:text-base">タイトル</label>
+            <input  type="text"
+              placeholder="タイトルを記入"
+              onChange={(e) => setTitle(e.target.value)}
+              class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+      </div>
+
+      <div class="sm:col-span-2">
+        <label  class="mb-2 inline-block text-sm text-gray-800 sm:text-base">画像</label>
+        <input  type="file"
+                accept="png, .jpeg, .jpg, .HEIC"
+                onChange={handleImage} class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+      </div>
+
+
+  <div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">内容</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="内容を記入"
+      onChange={(e) => setPostText(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">code</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="コードを記入"
+      onChange={(e) => setCode(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+  <div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">内容</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="内容を記入"
+      onChange={(e) => setPostText(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">code</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="コードを記入"
+      onChange={(e) => setCode(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+  <div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">内容</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="内容を記入"
+      onChange={(e) => setPostText(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+
+<div class="sm:col-span-2">
+  <label class="mb-2 inline-block text-sm text-gray-800 sm:text-base">code</label>
+  <div class="h-64 rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring overflow-auto">
+    <textarea
+      placeholder="コードを記入"
+      onChange={(e) => setCode(e.target.value)}
+      class="w-full h-full resize-none outline-none"
+    ></textarea>
+  </div>
+</div>
+
+
+    <div class="flex items-center justify-between sm:col-span-2">
+      <button  class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base" type="submit" >Send</button>
+    </div>
+  </form> 
+</div>
+</div>
+           </>
+      );}
                     
-                    export default Blog;
+  export default Blog;
