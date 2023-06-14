@@ -15,10 +15,10 @@ const Require = () => {
   
       <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 mt-10">
       
-        <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-          <a href="#" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+        <div class="flex flex-col overflow-hidden rounded-lg border bg-gray-50">
+          <div class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
             <img src="./img/スクリーンショット 2023-06-10 7.03.09.png" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-          </a>
+          </div>
   
           <div class="flex flex-1 flex-col p-4 sm:p-6">
             <h2 class="mb-5 text-2xl font-semibold text-gray-800">
@@ -32,13 +32,13 @@ const Require = () => {
   
         
         <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-          <a href="#" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+          <div  class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
             <img src="./img/スクリーンショット 2023-06-10 7.07.41.png" loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-          </a>
+          </div>
   
-          <div class="flex flex-1 flex-col p-4 sm:p-6">
+          <div class="flex flex-1 flex-col p-4 sm:p-6 bg-red-50">
             <h2 class="mb-5 text-2xl font-semibold text-gray-800">
-              <div  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">プロトタイプの作成</div>
+              プロトタイプの作成
             </h2>
   
             <p class="mb-8 text-gray-500 font-bold">顧客の視点やニーズをより深く理解しています。<br/>これに基づいて、ユーザーが使いやすく、必要な機能を備えたプロトタイプを作成することができます。<br/>
@@ -49,13 +49,13 @@ const Require = () => {
   
         
         <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-          <a href="#" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+          <div  class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
             <img src="./img/スクリーンショット 2023-06-10 7.10.25.png" loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-          </a>
+          </div>
   
-          <div class="flex flex-1 flex-col p-4 sm:p-6">
+          <div class="flex flex-1 flex-col p-4 sm:p-6 bg-yellow-100">
             <h2 class="mb-5 text-2xl font-semibold text-gray-800">
-              <div  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">フロントエンドの開発</div>
+              フロントエンドの開発
             </h2>
   
             <p class="mb-8 text-gray-500 font-bold">効果的なコミュニケーションや説明能力が備わっています。<br/>これにより、開発チームや他の関係者との円滑なコミュニケーションを図り、要件の共有や技術的な課題の解決において効果的な役割を果たすことができます。<br/><br/>また、チーム内での協働やタスクの調整もスムーズに行えます。</p>
@@ -65,13 +65,13 @@ const Require = () => {
   
         
         <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
-          <a href="#" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
+          <div class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">
             <img src="./img/スクリーンショット 2023-06-10 7.17.14.png" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-          </a>
+          </div>
   
-          <div class="flex flex-1 flex-col p-4 sm:p-6">
+          <div class="flex flex-1 flex-col p-4 sm:p-6 bg-blue-100">
             <h2 class="mb-5 text-2xl font-semibold text-gray-800 ">
-              <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">テストと納品</div>
+              テストと納品
             </h2>
   
             <p class="mb-8 text-gray-500 font-bold">詳細な注意力や品質管理に対する意識を高めています。<br/>これにより、開発したコードを綿密にテストし、バグやエラーを特定して修正することができます。<br/>

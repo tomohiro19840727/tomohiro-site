@@ -18,7 +18,7 @@ const Newblog = ({ setSelectedTitle, setSelectedPostText, selectedPostText, setS
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(query(collection(db, "posts"),orderBy("createdAt", "desc"),limit(3)));
+      const data = await getDocs(query(collection(db, "posts"),orderBy("createdAt", "desc"),limit(4)));
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id})));
     }
     getPosts();
@@ -39,35 +39,40 @@ const Newblog = ({ setSelectedTitle, setSelectedPostText, selectedPostText, setS
   };
 
   return (
-    <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
-      <div className='container px-5 py-24 mx-auto'>
-        <div className='text-center md-20 mb-20'>
-          <h1 className='text-2xl sm:text-3xl mb-2 text-gray-900 font-bold'>最新の投稿情報</h1>
-        </div>
-        <div className='flex flex-wrap -mx-4'>
+    <>
+        <div class="text-gray-600 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-200 via-blue-300 to-orange-100 mt-10">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <h2 class="mb-8 mt-10 text-center text-3xl font-bold text-gray-800 md:mb-12 lg:text-4xl">最新の投稿情報</h2>
+
+
+          <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 mt-20 mb-20">
           {sortedLists.map((post) => (
-            <div key={post.id} className='md:w-1/3 px-4 mb-8'>
-              <div className='bg-gray-200 rounded-lg p-8'>
-                <div className='flex items-center mb-3'>
-                  <div className='bg-green-500 text-white rounded-full h-8 w-8 flex items-center justify-center'></div>
-                  <span className='text-gray-800 text-xl font-bold block'>
-                    {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
-                  </span>
-                  <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
-                </div>
+            <div>
+              <div  class="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
+                <img src={post.imgUrl} loading="lazy" alt="Photo by Austin Wade" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+
+                <div class="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+                <span className='text-gray-800 text-xl block'>
+                            {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
+                          </span>
+                <h2 className='text-gray-900 text-2xl font-bold ml-2'>{post.title}</h2>
                 <Link
-                  to='/postdetail'
-                  onClick={() => handleClick(post)}
-                  className='flex mt-3 text-green-500 items-center font-bold hover:text-green-600 transition-colors duration-300'
-                >
-                  詳細
-                </Link>
+                          to='/postdetail'
+                          onClick={() => handleClick(post)}
+                          className=' mt-3 text-green-500 items-center text-2xl font-bold hover:text-green-600 transition-colors duration-300'
+                          >
+                          詳細
+                        </Link>
+
+                        
+                </div>
               </div>
             </div>
-          ))}
+              ))}
+          </div>
         </div>
-      </div>
-    </section>
+        </div>
+                  </>
 
   )
 }

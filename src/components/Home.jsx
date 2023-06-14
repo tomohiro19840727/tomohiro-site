@@ -1,6 +1,5 @@
 import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { db } from '../firebase';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -33,11 +32,20 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
     <>
     <Welcome />
      
-
+{/* 
 <h2 className='text-4xl font-bold m-40 flex justify-center font-serif'>
 『 自然とテクノロジーの融合 』を追求する<br/><br/>
 "フロントエンジニア"として、<br/><br/>
-私にしか作れない魅力的な『 WEBアプリ 』を提供します！！</h2>
+私にしか作れない魅力的な『 WEBアプリ 』を提供します！！</h2> */}
+
+<h2 className='text-2xl md:text-4xl font-bold my-5 md:my-10 text-center font-serif'>
+  『 自然とテクノロジーの融合 』を追求する
+</h2>
+<p className='text-2xl md:text-4xl mb-5 md:mb-10 text-center font-serif font-bold'>
+  "フロントエンジニア"として、<br/><br/>
+  私にしか作れない魅力的な『 WEBアプリ 』を提供します！！
+</p>
+
 
 <About />
 
@@ -130,15 +138,15 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
     <div class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
 
-      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-        <div href="#" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 bg-yellow-50">
+        <div class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
           <img src="./img/スクリーンショット 2023-06-09 15.05.17.png" loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
         </div>
 
         <div class="flex flex-col gap-2">
 
           <h2 class="text-3xl font-bold text-gray-800">
-            <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">HTML&CSS, Javascript</div>
+           HTML&CSS, Javascript
           </h2>
 
           <p class="text-gray-500 font-bold">HTMLを使用してWebページの構造を定義し、要素を配置します。<br/>CSSを使ってそれらの要素のスタイルやレイアウトを設定し、見栄えを整えます。<br/>そして、JavaScriptを活用することで、ページ上で動的な動作やユーザーとの対話を実現します</p>
@@ -147,7 +155,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
 
 
-      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 bg-slate-100">
         <div class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
           <img src="./img/スクリーンショット 2023-06-09 15.06.20.png" loading="lazy" alt="Photo by Lorenzo Herrera" class=" h-auto w-auto object-cover object-center transition duration-200 group-hover:scale-110" />
         </div>
@@ -155,7 +163,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
         <div class="flex flex-col gap-2">
 
           <h2 class="text-3xl font-bold text-gray-800">
-            <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">React.js</div>
+            React.js
           </h2>
 
           <p class="text-gray-500 font-bold">コンポーネントと呼ばれる再利用可能なUI要素を作成し、それらを組み合わせてWebアプリケーションを作ることができます。<br/>React.jsを使うことで、スムーズなUIの更新やパフォーマンスの向上が可能となります。</p>
@@ -165,7 +173,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
 
 
-      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 bg-blue-200">
         <div class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
           <img src="./img/スクリーンショット 2023-06-09 15.07.18.png" loading="lazy" alt="Photo by Magicle" class=" object-cover object-center transition duration-200 group-hover:scale-110" />
         </div>
@@ -173,7 +181,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
         <div class="flex flex-col gap-2">
 
           <h2 class="text-3xl font-bold text-gray-800">
-            <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">Firebase</div>
+            Firebase
           </h2>
 
           <p class="text-gray-500 font-bold">バックエンドの機能を簡単に利用できるようにします。データベース、認証、ストレージ、ホスティングなどの機能を提供し、Webアプリケーションやモバイルアプリケーションの開発を支援します。<br/>また、リアルタイムデータベースや通知などのリアルタイム機能も備えています。</p>
@@ -183,16 +191,16 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
       </div>
       
 
-      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+      <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6 bg-red-50">
         <div class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
           <img src="./img/スクリーンショット 2023-06-09 15.08.14.png" loading="lazy" alt="Photo by Martin Sanchez" class="absolute inset-0 h-auto w-auto object-cover object-center transition duration-200 group-hover:scale-110" />
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 ">
         
 
           <h2 class="text-3xl font-bold text-gray-800">
-            <div class="transition duration-100 hover:text-indigo-500 active:text-indigo-600">TailWindCSS</div>
+            TailWindCSS
           </h2>
 
           <p class="text-gray-500 font-bold">CSSを書く手間や複雑さを減らしながら、柔軟なデザインを実現できます。<br/>また、クラス名に基づいた明確な命名規則があり、再利用性の高いコードを書くことができます</p>
@@ -207,38 +215,8 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
 
 
-   {/* <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
-      <div className='container px-5 py-24 mx-auto'>
-        <div className='text-center md-20 mb-20'>
-          <h1 className='text-2xl sm:text-3xl mb-2 text-gray-900 font-bold'>最新の投稿情報</h1>
-        </div>
-        <div className='flex flex-wrap -mx-4'>
-          {sortedLists.map((post) => (
-            <div key={post.id} className='md:w-1/3 px-4 mb-8'>
-              <div className='bg-gray-200 rounded-lg p-8'>
-                <div className='flex items-center mb-3'>
-                  <div className='bg-green-500 text-white rounded-full h-8 w-8 flex items-center justify-center'></div>
-                  <span className='text-gray-800 text-xl font-bold block'>
-                    {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
-                  </span>
-                  <h2 className='text-gray-900 text-lg font-bold ml-2'>{post.title}</h2>
-                </div>
-                <Link
-                  to='/postdetail'
-                  onClick={() => handleClick(post)}
-                  className='flex mt-3 text-green-500 items-center font-bold hover:text-green-600 transition-colors duration-300'
-                >
-                  詳細
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section> */}
-
-   <Newblog 
-   
+  
+   <Newblog  
       setSelectedCode={setSelectedCode}
             
       setSelectedTitle={setSelectedTitle}
@@ -249,8 +227,6 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
       setSelectedPostText={setSelectedPostText}
       
-  
-
       setSelectedPostText3={setSelectedPostText3}
       
       setSelectedCode3={setSelectedCode3}
@@ -258,9 +234,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
       setSelectedImage={setSelectedImage}
    />
 
-                        </>
-
-                        
+                        </>     
   )
 }
 

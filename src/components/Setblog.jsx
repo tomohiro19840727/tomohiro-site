@@ -50,31 +50,37 @@ function Setblog({ isAuth, setSelectedTitle, setSelectedPostText, selectedPostTe
 
   return (
     <>
-      <div className="bg-white py-6 sm:py-8 lg:py-12 min-h-screen bg-gradient-to-br from-violet-300 via-pink-100 to-orange-100">
-        <div className="container mx-auto">
-          <div>
-            <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Blog</h2>
+     <div className="bg-white py-6 sm:py-8 lg:py-12 min-h-screen bg-gradient-to-br from-violet-300 via-pink-100 to-orange-100">
+        <div className="container mx-auto"></div>
+        <div>
+            <h2 className="text-gray-800 text-2xl lg:text-6xl font-bold text-center mb-4 md:mb-6">Blog</h2>
           </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {sortedLists.map((post) => (
-              <div key={post.id} className="bg-gray-100 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <span className="text-gray-800 text-xl font-bold block">
+      <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4  mb-20 m-10">
+  {sortedLists.map((post) => (
+    <div>
+      <div  class="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg mt-20">
+        <img src={post.imgUrl} loading="lazy" alt="Photo by Austin Wade" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110 mb-20 " />
+
+        <div class="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
+        <span className='text-gray-800 text-xl block'>
                     {dayjs.unix(Number(post.createdAt)).tz('Asia/Tokyo').format('MM/DD HH:mm')}
                   </span>
+        <h2 className='text-gray-900 text-2xl font-bold ml-2'>{post.title}</h2>
+        <Link
+                  to='/postdetail'
+                  onClick={() => handleClick(post)}
+                  className=' mt-3 text-green-500 items-center text-2xl font-bold hover:text-green-600 transition-colors duration-300'
+                  >
+                  詳細
+                </Link>
 
-                  <h2 className="text-gray-800 text-xl font-bold mb-2">
-                    <Link to="/postdetail" onClick={() => handleClick(post)} className="hover:text-indigo-500 active:text-indigo-600 transition duration-100">{post.title}</Link>
-                  </h2>
-                  {isAuth && (
-                    <button onClick={() => handleDelete(post.id)} className="text-indigo-600 hover:text-indigo-500">削除</button>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+                <button className='text-red-400  text-xl hover:text-red-800 transition-colors duration-300 mt-2' onClick={() => handleDelete(post.id)}>削除</button>
         </div>
       </div>
+    </div>
+      ))}
+  </div>
+  </div>
     </>
   );
 }
