@@ -8,13 +8,12 @@ const Require = () => {
       <div class="mb-10 md:mb-16">
         <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-5xl">Project lifecycle</h2>
   
-        <p class=" font-serif font-bold mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">私はコールセンター出身のエンジニアです。<br/>クライアントとの円滑なコミュニケーションや要件理解、ユーザー中心の設計、開発プロセス、チーム内コミュニケーション、品質管理など、プロジェクト全体で利点を持っています。<br/><br/>
-        また、顧客との関係構築やニーズへの対応においても優れた能力を発揮します。<br/>
-        私の経験とスキルを活かし、プロジェクトの成功に貢献することを目指しています。</p>
+        <p class=" font-serif font-bold mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">私はコールセンター出身のエンジニアです。<br/>クライアントとの円滑なコミュニケーションや要件理解、ユーザー中心の設計、開発プロセス、チーム内コミュニケーション、品質管理など、プロジェクト全体で利点を持っています。
+        </p>
       </div>
       
   
-      <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 mt-20">
+      <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 mt-10">
       
         <div class="flex flex-col overflow-hidden rounded-lg border bg-white">
           <a href="#" class="group relative block h-48 overflow-hidden bg-gray-100 md:h-64">

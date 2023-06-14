@@ -2,7 +2,7 @@ import React from 'react'
 
 function Profile() {
   return (
-    <div className="'text-gray-700 border-gray-200 bg-white  bg-h-screen w-full bg-gradient-to-br
+    <div className="text-gray-700 border-gray-200 bg-white  bg-h-screen w-full bg-gradient-to-br
     from-violet-300 via-blue-100 to-orange-100 py-6 sm:py-8 lg:py-12">
   <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
     <div className="grid md:grid-cols-2 gap-8 lg:gap-12">

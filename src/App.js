@@ -14,6 +14,7 @@ import SendMail from "./components/SendMail"
 
 function App() {
   const [isAuth, setIsAuth ] = useState(localStorage.getItem("isAuth"));
+  const [selectedTitle, setSelectedTitle] = useState("");
   const [selectedPostText, setSelectedPostText] = useState("");
   const [selectedCode, setSelectedCode ] = useState("");
   const [selectedPostText2, setSelectedPostText2] = useState("");
@@ -37,6 +38,9 @@ function App() {
 
       <Route path='/setblog' element={<Setblog isAuth={isAuth}  
       
+      selectedTitle={selectedTitle} 
+      setSelectedTitle={setSelectedTitle}
+
       selectedPostText={selectedPostText} 
       setSelectedPostText={setSelectedPostText}
       selectedCode={selectedCode} 
@@ -59,6 +63,10 @@ function App() {
       <Route path='/blog' element={<Blog />} />
 
       <Route path='/postdetail' element={<PostDetail selectedPostText={selectedPostText} 
+
+      selectedTitle={selectedTitle} 
+      setSelectedTitle={setSelectedTitle}
+
       setSelectedPostText={setSelectedPostText}
       selectedCode={selectedCode}
       setSelectedCode={setSelectedCode} 

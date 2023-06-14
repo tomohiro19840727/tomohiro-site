@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-function Setblog({ isAuth, setSelectedPostText, selectedPostText, setSelectedCode,setSelectedImage, setSelectedPostText2,setSelectedPostText3, setSelectedCode2, setSelectedCode3 }) {
+function Setblog({ isAuth, setSelectedTitle, setSelectedPostText, selectedPostText, setSelectedCode,setSelectedImage, setSelectedPostText2,setSelectedPostText3, setSelectedCode2, setSelectedCode3 }) {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ function Setblog({ isAuth, setSelectedPostText, selectedPostText, setSelectedCod
   };
 
   const handleClick = (post) => {
+    setSelectedTitle(post.title);
     setSelectedPostText(post.postsText);
     setSelectedCode(post.code);
     setSelectedPostText2(post.postsText2);
