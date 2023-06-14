@@ -9,6 +9,7 @@ import 'dayjs/locale/ja';
 import About from './About';
 import Welcome from './Welcome';
 import Require from './Require';
+import Newblog from './Newblog';
 
 
 dayjs.locale('ja');
@@ -16,7 +17,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 
-function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
+function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSelectedCode,setSelectedImage, setSelectedPostText2,setSelectedPostText3, setSelectedCode2, setSelectedCode3 }) {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
@@ -27,13 +28,6 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
     getPosts();
    },[]);
 
-   const handleClick = (post) => {
-    setSelectedPostText(post.postsText);
-    setSelectedCode(post.code);
-    console.log(selectedPostText);
-  };
- 
-   const sortedLists = postList.sort((a, b) => b.createdAt - a.createdAt);
 
   return (
     <>
@@ -213,7 +207,7 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
 
 
 
-   <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
+   {/* <section className='text-gray-700 border-t border-gray-200 bg-white py-6 sm:py-8 lg:py-12 pb-6 sm:pb-8 lg:pb-12 bg-h-screen w-full bg-gradient-to-br from-violet-300 via-blue-500 to-orange-100'>
       <div className='container px-5 py-24 mx-auto'>
         <div className='text-center md-20 mb-20'>
           <h1 className='text-2xl sm:text-3xl mb-2 text-gray-900 font-bold'>最新の投稿情報</h1>
@@ -241,7 +235,28 @@ function Home({setSelectedPostText, selectedPostText, setSelectedCode}) {
           ))}
         </div>
       </div>
-    </section>
+    </section> */}
+
+   <Newblog 
+   
+      setSelectedCode={setSelectedCode}
+            
+      setSelectedTitle={setSelectedTitle}
+      
+      setSelectedPostText2={setSelectedPostText2}
+      
+      setSelectedCode2={setSelectedCode2}
+
+      setSelectedPostText={setSelectedPostText}
+      
+  
+
+      setSelectedPostText3={setSelectedPostText3}
+      
+      setSelectedCode3={setSelectedCode3}
+      
+      setSelectedImage={setSelectedImage}
+   />
 
                         </>
 

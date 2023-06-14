@@ -10,6 +10,7 @@ import Setblog from './components/Setblog'
 import PostDetail from './components/PostDetail'
 import Webapp from "./components/Webapp"
 import SendMail from "./components/SendMail"
+import ScrollTop from "./components/ScrollTop"
 
 
 function App() {
@@ -26,9 +27,29 @@ function App() {
 
   return (
    <Router>
+    <ScrollTop />
      <Navbar isAuth={isAuth} />
     <Routes>
-      <Route path='/' element={<Home  selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode} />} />
+      <Route path='/' element={<Home  
+      selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode}
+
+      selectedTitle={selectedTitle} 
+      setSelectedTitle={setSelectedTitle}
+      selectedPostText2={selectedPostText2} 
+      setSelectedPostText2={setSelectedPostText2}
+      selectedCode2={selectedCode2} 
+      setSelectedCode2={setSelectedCode2}
+
+      selectedPostText3={selectedPostText3} 
+      setSelectedPostText3={setSelectedPostText3}
+      selectedCode3={selectedCode3} 
+      setSelectedCode3={setSelectedCode3}
+
+      selectedImage={selectedImage} 
+      setSelectedImage={setSelectedImage}
+      />} />
+
+
       <Route path='/Profile' element={<Profile />} />
       <Route path='/Webapp' element={<Webapp />} />
       <Route path='/SendMail' element={<SendMail />} />
