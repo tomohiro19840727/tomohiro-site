@@ -31,7 +31,7 @@ const SendMail = () => {
           setEmail('');
           setMessage('');
         } else {
-          console.log('メールの送信に失敗しました');
+          console.log('メールの送信に失敗しました SendMail');
         }
       })
       .catch((error) => {

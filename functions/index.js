@@ -1,5 +1,5 @@
 
-const {onRequest} = require("firebase-functions");
+
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const sgMail = require("@sendgrid/mail");
@@ -26,7 +26,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
       console.log("メールが送信されました");
       res.json({ message: "メールが送信されました。" });
     } catch (error) {
-      console.error("メールの送信に失敗しました:", error);
+      console.error("メールの送信に失敗しました Index:", error);
       res.status(500).json({ error: "メールの送信に失敗しました。" });
     }
   });
