@@ -1,33 +1,29 @@
-
-
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
-const sgMail = require("@sendgrid/mail");
-const cors = require("cors")({ origin: true });
-
-const apiKey = functions.config().sendgrid.apikey;
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const sgMail = require('@sendgrid/mail');
 
 admin.initializeApp();
-sgMail.setApiKey(apiKey);
 
-exports.sendMail = functions.https.onRequest((req, res) => {
-  cors(req, res, async () => {
-    const { name, email, message } = req.body;
+const sendgridApiKey = process.env.REACT_APP_API_KEY;
 
-    const msg = {
-      to: "tomohirofarm@gmail.com",
-      from: "sender-email",
-      subject: "お問い合わせ",
-      text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
-    };
+// SendGridのAPIキーを設定します
+sgMail.setApiKey(sendgridApiKey);
 
-    try {
-      await sgMail.send(msg);
-      console.log("メールが送信されました");
-      res.json({ message: "メールが送信されました。" });
-    } catch (error) {
-      console.error("メールの送信に失敗しました Index:", error);
-      res.status(500).json({ error: "メールの送信に失敗しました。" });
-    }
-  });
+exports.sendMail = functions.https.onRequest(async (req, res) => {
+  const { name, email, message } = req.body;
+
+  const msg = {
+    to: 'tomohirofarm@gmail.com', // 送信先のメールアドレスを設定します
+    from: 'noreply@example.com', // 送信元のメールアドレスを設定します
+    subject: 'お問い合わせがありました',
+    text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
+  };
+
+  try {
+    await sgMail.send(msg);
+    res.status(200).send('メールが送信されました');
+  } catch (error) {
+    console.error('メールの送信に失敗しました:', error);
+    res.status(500).send('メールの送信に失敗しました');
+  }
 });

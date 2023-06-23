@@ -10,9 +10,9 @@ const SendMail = () => {
     e.preventDefault();
 
     const data = {
-      name,
-      email,
-      message,
+      name: name,
+      email: email,
+      message: message
     };
 
     fetch('https://us-central1-tomohiro-site.cloudfunctions.net/sendMail', {
