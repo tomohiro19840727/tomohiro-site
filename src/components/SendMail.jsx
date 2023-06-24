@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+
 
 const SendMail = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -6,33 +9,31 @@ const SendMail = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
+   
+    const userID = process.env.REACT_APP_USER_ID;
+    const serviceID = process.env.REACT_APP_SERVICE_ID;
+    const templateID = process.env.REACT_APP_TEMPLATE_ID
 
-    const data = {
-      name: name,
-      email: email,
+    emailjs.init(process.env.REACT_APP_USER_ID);
+
+    const template_param = {
+      user_name: name,
+      user_email: email,
       message: message
     };
 
-    fetch('https://us-central1-tomohiro-site.cloudfunctions.net/sendMail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    emailjs.send(serviceID,templateID, template_param, userID )
       .then((response) => {
-        if (response.ok) {
           console.log('メールが送信されました');
           // フォームの送信後に入力内容をリセット
           setIsSubmitted(true);
           setName('');
           setEmail('');
           setMessage('');
-        } else {
-          console.log('メールの送信に失敗しました SendMail');
-        }
+        
       })
       .catch((error) => {
         console.error('エラー:', error);
@@ -119,3 +120,5 @@ const SendMail = () => {
                   };
                   
                   export default SendMail;
+
+                 

@@ -2,6 +2,7 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const sgMail = require('@sendgrid/mail');
 
+
 admin.initializeApp();
 
 const sendgridApiKey = process.env.REACT_APP_API_KEY;
@@ -14,7 +15,7 @@ exports.sendMail = functions.https.onRequest(async (req, res) => {
 
   const msg = {
     to: 'tomohirofarm@gmail.com', // 送信先のメールアドレスを設定します
-    from: 'noreply@example.com', // 送信元のメールアドレスを設定します
+    from: 'tomohirofarm@gmail.com', // 送信元のメールアドレスを設定します
     subject: 'お問い合わせがありました',
     text: `名前: ${name}\nメールアドレス: ${email}\nメッセージ: ${message}`,
   };
