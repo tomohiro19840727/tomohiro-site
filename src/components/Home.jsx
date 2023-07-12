@@ -9,6 +9,9 @@ import About from './About';
 import Welcome from './Welcome';
 import Require from './Require';
 import Newblog from './Newblog';
+import MobileAbout from './MobileAbout';
+import { useMediaQuery } from 'react-responsive';
+import MobileWelcome from './MobileWelcome';
 
 
 dayjs.locale('ja');
@@ -18,6 +21,7 @@ dayjs.extend(timezone);
 
 function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSelectedCode,setSelectedImage, setSelectedPostText2,setSelectedPostText3, setSelectedCode2, setSelectedCode3 }) {
   const [postList, setPostList] = useState([]);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     const getPosts = async () => {
@@ -30,7 +34,13 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 
   return (
     <>
-    <Welcome />
+     <div>
+        {isMobile ? ( 
+          <MobileWelcome  />
+          )  : 
+          (
+            <Welcome /> )}
+      </div>
      
 
 
@@ -43,7 +53,13 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
 </p>
 
 
-<About />
+<div>
+        {isMobile ? ( 
+          <MobileAbout  />
+          )  : 
+          (
+            <About /> )}
+      </div>
 
   
 

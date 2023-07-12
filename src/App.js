@@ -11,6 +11,10 @@ import PostDetail from './components/PostDetail'
 import Webapp from "./components/Webapp"
 import SendMail from "./components/SendMail"
 import ScrollTop from "./components/ScrollTop"
+import { useMediaQuery } from 'react-responsive';
+import MobileNavbar from "./components/MobileNavbar"
+import Welcome from "./components/Welcome"
+import MobileWelcome from "./components/MobileWelcome"
 
 
 function App() {
@@ -23,12 +27,25 @@ function App() {
   const [selectedPostText3, setSelectedPostText3] = useState("");
   const [selectedCode3, setSelectedCode3 ] = useState("");
   const [selectedImage, setSelectedImage] = useState("");
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
   
 
   return (
    <Router>
     <ScrollTop />
-     <Navbar isAuth={isAuth} />
+     {/* <Navbar isAuth={isAuth} /> */}
+     <div>
+        {isMobile ? ( 
+          <MobileNavbar isAuth={isAuth} />
+          )  : 
+          (
+            <Navbar  isAuth={isAuth} /> )}
+      </div>
+     
+     
+    
+
     <Routes>
       <Route path='/' element={<Home  
       selectedPostText={selectedPostText} setSelectedPostText={setSelectedPostText}  selectedCode={selectedCode} setSelectedCode={setSelectedCode}
