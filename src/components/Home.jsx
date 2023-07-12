@@ -32,11 +32,7 @@ function Home({ setSelectedTitle, setSelectedPostText, selectedPostText, setSele
     <>
     <Welcome />
      
-{/* 
-<h2 className='text-4xl font-bold m-40 flex justify-center font-serif'>
-『 自然とテクノロジーの融合 』を追求する<br/><br/>
-"フロントエンジニア"として、<br/><br/>
-私にしか作れない魅力的な『 WEBアプリ 』を提供します！！</h2> */}
+
 
 <h2 className='text-2xl md:text-4xl font-bold my-5 md:my-10 text-center font-serif'>
   『 自然とテクノロジーの融合 』を追求する
