@@ -2,7 +2,7 @@
   自己紹介も含めた様々なポートフォリオサイトを紹介できるように作成しました<br >
   また自分の学んだことを自分のサイトで投稿できるようにしました。<br > 
  レスポンシブ対応しているのでスマホからもご確認いただけます。
- <img width="1400" alt="スクリーンショット 2023-08-04 0 06 18" src="https://tomohiro-site.vercel.app/スクリーンショット 2023-08-03 11.05.06.png">
+ <img width="1400" alt="スクリーンショット 2023-08-04 0 06 18" src="https://tomohiro-site.vercel.app/img/スクリーンショット 2023-08-03 11.05.06.png">
  <img width="350" height="700" src= "https://tomohiro-site.vercel.app/img/IMG_6905.jpg">
 
 # URL
